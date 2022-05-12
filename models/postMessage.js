@@ -1,4 +1,3 @@
-// here we utilize the possiblities of mongoose
 import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema({
@@ -22,7 +21,6 @@ const postSchema = mongoose.Schema({
   },
 });
 
-// As now we have a schema we will convert it into a model like:
 const PostMessage = mongoose.model("PostMessage", postSchema);
 
 export default PostMessage;
