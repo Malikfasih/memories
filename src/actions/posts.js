@@ -9,15 +9,14 @@ import {
   END_LOADING,
   COMMENT,
   LIKE,
-} from "../constants/actionTypes";
+} from '../constants/actionTypes';
 
-import * as api from "../api/index.js";
+import * as api from '../api/index.js';
 
 export const getPost = (id) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
     const { data } = await api.fetchPost(id);
-    console.log(data);
 
     dispatch({ type: FETCH_POST, payload: data });
   } catch (error) {
@@ -29,7 +28,6 @@ export const getPosts = (page) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
     const { data } = await api.fetchPosts(page);
-    console.log(data);
 
     dispatch({ type: FETCH_ALL, payload: data });
     dispatch({ type: END_LOADING });
@@ -75,7 +73,7 @@ export const updatePost = (id, post) => async (dispatch) => {
 };
 
 export const likePost = (id) => async (dispatch) => {
-  const user = JSON.parse(localStorage.getItem("profile"));
+  const user = JSON.parse(localStorage.getItem('profile'));
 
   try {
     const { data } = await api.likePost(id, user?.token);
