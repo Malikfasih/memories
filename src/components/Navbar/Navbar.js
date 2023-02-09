@@ -48,7 +48,6 @@ const Navbar = () => {
       </Link>
 
       <Toolbar className={classes.toolbar}>
-        {console.log(user?.result)}
         {user?.result ? (
           <div className={classes.profile}>
             <Avatar
